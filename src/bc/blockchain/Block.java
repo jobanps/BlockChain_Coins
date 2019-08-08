@@ -1,19 +1,20 @@
 package bc.blockchain;
 
-import java.util.Arrays;
 
 public class Block {
 	
 	private String data;
 	private String hashCode;
 	private String lastHashCode;
+	private long xFactor;
 	
 	//Block Class Constuctor
-	public Block(String data,  String lastHashCode) {
-		super();
+	public Block(String data, String hashCode, String lastHashCode, long xFactor) {
+		
 		this.data = data;
-		this.hashCode = String.valueOf(new String[] {this.data,this.lastHashCode}.hashCode());
+		this.hashCode = hashCode;
 		this.lastHashCode = lastHashCode;
+		this.xFactor = xFactor;
 	}
 
 	//Getters and Setters
@@ -39,6 +40,14 @@ public class Block {
 
 	public void setLastHashCode(String lastHashCode) {
 		this.lastHashCode = lastHashCode;
+	}
+
+	public long getxFactor() {
+		return xFactor;
+	}
+
+	public void setxFactor(long xFactor) {
+		this.xFactor = xFactor;
 	}
 	
 	

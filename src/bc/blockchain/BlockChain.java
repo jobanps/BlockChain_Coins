@@ -1,5 +1,6 @@
 package bc.blockchain;
 
+import java.security.MessageDigest;
 import java.util.ArrayList;
 
 public class BlockChain {
@@ -37,6 +38,31 @@ public class BlockChain {
 		
 		
 		return true;
+	}
+	
+	public static String[] getValidHashCode(String input) {
+		
+		String[] output = new String[2];
+		int secretX = 0;
+		 try {
+	            MessageDigest digest = MessageDigest.getInstance("SHA-256");           
+	            byte[] hash = digest.digest((input + secretX).getBytes("UTF-8"));           
+	            StringBuffer hexString = new StringBuffer(); // This will contain hash as hexidecimal
+	            for (int i2 = 0; i2 < hash.length; i2++) {
+	                String hex = Integer.toHexString(0xff & hash[i2]);
+	                if(hex.length() == 1) hexString.append('0');
+	                hexString.append(hex);
+	            }
+	            output[0]= hexString.toString();
+	            output[1] = String.valueOf(secretX);
+	            return output;
+	        }
+	        catch(Exception e) {
+	            throw new RuntimeException(e);
+	        }
+		
+		 
+		
 	}
 
 }
