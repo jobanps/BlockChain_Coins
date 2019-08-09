@@ -17,11 +17,12 @@ public class NonsenseCoin extends BlockChain {
 
 		int size = this.getBlockChain().size();
 		int id = 1;
+		System.out.println("\nBlock Chain");
 		for (Block blk : this.getBlockChain()) {
 			System.out.println("Block " + id + " - [ " + blk.getHashCode() + " ]");
 			if (id != size) {
-				System.out.println("                ||");
-				System.out.println("                \\/");
+				System.out.println("                  |");
+				System.out.println("                \\ /");
 			}
 			id++;
 		}
@@ -37,24 +38,29 @@ public class NonsenseCoin extends BlockChain {
 		while (true) {
 
 			hashCode = this.generateHashCode(feedData + xFactor);
-
-			if (hashCode.startsWith("001") && hashCode.endsWith("100")) {
-				System.out.println("Mining Hash Code for NonsenseCoin : " + hashCode);
-				System.out.println("\n “YOU GET A NONSENSE COIN!! CONGRATS” !! (Hashcode : " + hashCode + ")\n");
+			System.out.println("Mining Hash Code for NonsenseCoin : " + hashCode);
+			
+			if (isValidCoin(hashCode)) {
+				
 				this.addNewNonsenseCoin(new Block(data, hashCode, prevHashCode, xFactor));
 				break;
 
-			} else {
-				System.out.println("Mining Hash Code for NonsenseCoin : " + hashCode);
 			}
-
 			xFactor++;
 
 		}
 
 	}
 
+	public boolean isValidCoin(String hashCode) {
+		if (hashCode.startsWith("001") && hashCode.endsWith("100")) {
+			return true;
+		}
+		return false;
+	}
+
 	public void addNewNonsenseCoin(Block newBlock) {
+		System.out.println("\n “YOU GET A NONSENSE COIN!! CONGRATS” !! (Hashcode : " + newBlock.getHashCode() + ")\n");
 		this.addBlock(newBlock);
 	}
 
