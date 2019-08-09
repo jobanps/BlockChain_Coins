@@ -16,6 +16,12 @@ public class Block {
 		this.lastHashCode = lastHashCode;
 		this.xFactor = xFactor;
 	}
+	
+public Block(String data, String hashCode) {
+		
+		this.data = data;
+		this.hashCode = hashCode;
+	}
 
 	//Getters and Setters
 	public String getData() {
