@@ -27,18 +27,19 @@ public class BlockChain {
 		this.blockChain = blockChain;
 	}
 
+	//Function to validate Block Chain
 	public boolean validateBlockChain() {
 
 		for (int i = 1; i < this.blockChain.size(); i++) {
 
 			if (!(this.blockChain.get(i).getLastHashCode().equals(this.blockChain.get(i - 1).getHashCode()))) {
-				System.out.println("\nInvalid Chain !");
+				System.out.println("\nInvalid NonsenseCoin Chain !");
 				return false;
 			}
 
 		}
 
-		System.out.println("\n Chain is Valid!\n");
+		System.out.println("\n NonsenseCoin Chain is Valid!\n");
 		return true;
 	}
 
