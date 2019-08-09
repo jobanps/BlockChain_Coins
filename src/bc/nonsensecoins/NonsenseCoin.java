@@ -40,8 +40,7 @@ public class NonsenseCoin extends BlockChain {
 
 			if (hashCode.startsWith("001") && hashCode.endsWith("100")) {
 				System.out.println("Mining Hash Code for NonsenseCoin : " + hashCode);
-				System.out
-						.println("\n “YOU GET A NONSENSE COIN!m CONGRATS” !! (Hashcode : " + hashCode + ")\n");
+				System.out.println("\n “YOU GET A NONSENSE COIN!! CONGRATS” !! (Hashcode : " + hashCode + ")\n");
 				this.addNewNonsenseCoin(new Block(data, hashCode, prevHashCode, xFactor));
 				break;
 

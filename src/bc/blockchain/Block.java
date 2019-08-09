@@ -1,29 +1,28 @@
 package bc.blockchain;
 
-
 public class Block {
-	
+
 	private String data;
 	private String hashCode;
 	private String lastHashCode;
 	private long xFactor;
-	
-	//Block Class Constuctor
+
+	// Block Class Constuctor
 	public Block(String data, String hashCode, String lastHashCode, long xFactor) {
-		
+
 		this.data = data;
 		this.hashCode = hashCode;
 		this.lastHashCode = lastHashCode;
 		this.xFactor = xFactor;
 	}
-	
-public Block(String data, String hashCode) {
-		
+
+	public Block(String data, String hashCode) {
+
 		this.data = data;
 		this.hashCode = hashCode;
 	}
 
-	//Getters and Setters
+	// Getters and Setters
 	public String getData() {
 		return data;
 	}
@@ -55,9 +54,5 @@ public Block(String data, String hashCode) {
 	public void setxFactor(long xFactor) {
 		this.xFactor = xFactor;
 	}
-	
-	
-	
-	
 
 }

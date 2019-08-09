@@ -21,7 +21,7 @@ public class Main {
 		do {
 
 			System.out.println(
-					"\nChoose Option !\n1.Mine Chain\n2.View Nonsense Coin Chain\n3.Validate Nonsense Coin Chain\n4.Exit\n\n Choose option : ");
+					"\nChoose Option !!\n1.Mine Chain\n2.View Nonsense Coin Chain\n3.Validate Nonsense Coin Chain\n4.Exit\n\n Choose option : ");
 
 			choice = input.nextInt();
 
